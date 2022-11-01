@@ -26,7 +26,7 @@ public class StringUtilities {
      * @return the concatenation of an integer, `firstSegment`, and a String, `secondSegment`
      */
     public static String concatenation(int firstSegment, String secondSegment){
-        return null;
+        return firstSegment + secondSegment;
     }
 
     /**
@@ -34,7 +34,7 @@ public class StringUtilities {
      * @return the first 3 characters of `input`
      */
     public static String getPrefix(String input){
-        return null;
+        return input.substring(0, 3);
     }
 
     /**
@@ -42,7 +42,8 @@ public class StringUtilities {
      * @return the last 3 characters of `input`
      */
     public static String getSuffix(String input){
-        return null;
+        String suffix = input.substring(input.length() - 3);
+        return suffix;
     }
 
     /**
@@ -51,7 +52,7 @@ public class StringUtilities {
      * @return the equivalence of two strings, `inputValue` and `comparableValue`
      */
     public static Boolean compareTwoStrings(String inputValue, String comparableValue){
-        return null;
+        return inputValue.equals(comparableValue);
     }
 
     /**
@@ -59,7 +60,14 @@ public class StringUtilities {
      * @return the middle character of `inputValue`
      */
     public static Character getMiddleCharacter(String inputValue){
-        return null;
+        char ch;
+        if (inputValue.length() % 2 != 0) {
+           ch = inputValue.charAt(inputValue.length() / 2);
+        } else {
+            ch = inputValue.charAt((inputValue.length() / 2) - 1);
+        }
+
+        return ch;
     }
 
     /**
@@ -67,7 +75,8 @@ public class StringUtilities {
      * @return the first sequence of characters
      */
     public static String getFirstWord(String spaceDelimitedString){
-        return null;
+        String[] sa = spaceDelimitedString.split(" ");
+        return sa[0];
     }
 
     /**
@@ -75,7 +84,8 @@ public class StringUtilities {
      * @return the second word of a string delimited by spaces.
      */
     public static String getSecondWord(String spaceDelimitedString){
-        return null;
+        String[] sa = spaceDelimitedString.split(" ");
+        return sa[1];
     }
 
     /**
@@ -83,6 +93,7 @@ public class StringUtilities {
      * @return an identical string with characters in reverse order.
      */
     public static String reverse(String stringToReverse){
-        return null;
+
+        return new StringBuilder(stringToReverse).reverse().toString();
     }
 }
